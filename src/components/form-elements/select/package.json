@@ -1,0 +1,10 @@
+{
+  "name": "@alexnsk89/select",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "vue-select": "4.0.0-beta.3"
+  }
+}

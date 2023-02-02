@@ -1,0 +1,13 @@
+{
+  "name": "@alexnsk89/store-gamelist",
+  "version": "^0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@alexnsk89/utils-api": "^0.0.0",
+    "babel-plugin-transform-require-context": "0.1.1",
+    "jsona": "^1.9.3",
+    "axios-cache-interceptor": "^0.2.8"
+  }
+}
