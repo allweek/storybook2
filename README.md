@@ -1,24 +1,40 @@
-# storybook
+# storybook casino
 
-## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## для запуска сервера storybook
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+npm run storybook 
 ```
 
-### Lints and fixes files
+## опубликовать пакеты 
+*для каждой сессии давать доступ командой в терминале "Set-ExecutionPolicy RemoteSigned -Scope Process"
 ```
-npm run lint
+lerna publish
+```       
+
+## если не было изменений но нужно опубликовать?
+```lerna publish from-package```
+  
+
+
+## В корневом package.json workspaces - путь к компонентам-пакетам, поддерживать в актуальном виде
+
+```
+"workspaces": [
+    "src/components/*/**",
+    "src/store/modules/*/**",
+    "src/utils/*/**"
+]
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## Добавлять в проект в /store/module/index.js
+
+## не запускать, но нужны были для инициализации
+``` npx storybook init ``` 
+
+``` npx lerna@latest init ```
