@@ -10,10 +10,12 @@ npm run storybook
 ```
 
 ## опубликовать пакеты 
-*для каждой сессии давать доступ командой в терминале "Set-ExecutionPolicy RemoteSigned -Scope Process"
+Сначала ```npm commit```
+
 ```
 lerna publish
 ```       
+*для каждой сессии давать доступ командой в терминале "Set-ExecutionPolicy RemoteSigned -Scope Process"
 
 ### если не было изменений но нужно опубликовать?
 ```lerna publish from-package```
