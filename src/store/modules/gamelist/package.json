@@ -1,10 +1,10 @@
 {
   "name": "@alexnsk89/store-gamelist",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@alexnsk89/store-common-packages": "^0.0.5"
+    "@alexnsk89/store-common-packages": "^0.0.6"
   }
 }
