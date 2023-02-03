@@ -1,11 +1,11 @@
 {
   "name": "@alexnsk89/store-gamelist",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@alexnsk89/utils-api": "^0.0.3",
+    "@alexnsk89/utils-api": "^0.0.4",
     "axios-cache-interceptor": "^0.2.8",
     "babel-plugin-transform-require-context": "0.1.1",
     "jsona": "^1.9.3"
