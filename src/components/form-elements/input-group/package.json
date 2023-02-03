@@ -1,10 +1,10 @@
 {
   "name": "@alexnsk89/input-group",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@alexnsk89/input": "^0.0.3"
+    "@alexnsk89/input": "^0.0.4"
   }
 }
