@@ -27,7 +27,7 @@ import {computed, ref} from "vue";
 import EventBus from "@alexnsk89/utils-event-bus/eventBus";
 
 export default {
-    name: 'SbModal',
+    name: 'Modal',
     props: {
       modalName: {
           type: String,

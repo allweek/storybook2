@@ -1,10 +1,10 @@
 {
   "name": "@alexnsk89/modal",
-  "version": "0.0.0",
+  "version": "0.0.12",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@alexnsk89/utils-event-bus": "0.0.0"
+    "@alexnsk89/utils-event-bus": "0.0.4"
   }
 }
