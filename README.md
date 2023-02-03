@@ -20,8 +20,15 @@ lerna publish
   
 
 
-## В корневом package.json workspaces - путь к компонентам-пакетам, поддерживать в актуальном виде
+## В корневом package.json workspaces - путь ко всем компонентам-пакетам (package.json)
 
+Универсально:
+```
+  "workspaces": [
+    "src/**"
+  ]
+```
+Old version:
 ```
 "workspaces": [
     "src/components/*/**",

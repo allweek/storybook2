@@ -1,4 +1,4 @@
-import {cacheHttp, http} from "@alexnsk89/utils-api/Api";
+import {cacheHttp, http} from "@/utils/api/api";
 import Jsona from "jsona";
 
 const state = () => ({
