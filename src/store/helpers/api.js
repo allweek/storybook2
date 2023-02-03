@@ -1,22 +1,22 @@
 import axios from 'axios';
 
-const getUrlWithoutLang = (url) => {
-    return url.split('/').filter((part) => part !== 'de' && part !== 'pl').join('/');
-}
-
-const { url } = __VUE_WORDPRESS__.routing;
-
-const siteName = __VUE_WORDPRESS__.home_url;
-
-const ajax = axios.create(
-    {
-        baseURL: `${getUrlWithoutLang(siteName)}/wp-json/wp/v2/`,
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-    }
-)
+// const getUrlWithoutLang = (url) => {
+//     return url.split('/').filter((part) => part !== 'de' && part !== 'pl').join('/');
+// }
+//
+// const { url } = window?.__VUE_WORDPRESS__?.routing || '';
+//
+// const siteName = window?.__VUE_WORDPRESS__?.home_url;
+//
+// const ajax = axios.create(
+//     {
+//         baseURL: `${getUrlWithoutLang(siteName)}/wp-json/wp/v2/`,
+//         headers: {
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json'
+//         }
+//     }
+// )
 
 const batchRequest = {}
 

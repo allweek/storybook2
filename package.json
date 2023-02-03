@@ -65,7 +65,7 @@
   ],
   "workspaces": [
     "src/components/*/**",
-    "src/store/packages/*/**",
+    "src/store/modules/*/**",
     "src/utils/*/**"
   ]
 }

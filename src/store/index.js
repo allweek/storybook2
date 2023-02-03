@@ -1,5 +1,8 @@
-const { state } = __VUE_WORDPRESS__;
+const { state } = window?.__VUE_WORDPRESS__ || {};
 import {createStore} from 'vuex'
+
+const API_ENDPOINT = 'https://spacex.evenbetpoker.com/api/web/';
+
 import {
     fetchItems,
     fetchSingle,
@@ -25,7 +28,7 @@ export default createStore({
         },
 
         apiendpoint: state => {
-            return state.apiendpoint;
+            return state.apiendpoint || API_ENDPOINT;
         },
 
         clientId: state => {
@@ -155,97 +158,6 @@ export default createStore({
             commit('SET_DOC_TITLE', parts.join(sep))
             document.title = state.site.docTitle
         },
-
-        getSingleBySlug({ getters, commit }, { type, slug, showLoading = false }) {
-            if ( ! getters.singleBySlug({ type, slug }) ) {
-                if (showLoading) {
-                    commit('SET_LOADING', true)
-                }
-                return fetchItems({ type, params: { slug } }).then(({ data: [ item ] }) => {
-                    commit('ADD_ITEM', { type, item  })
-                    if (showLoading) {
-                        commit('SET_LOADING', false)
-                    }
-                    return item
-                })
-            }
-        },
-        getSinglePageBySlug({ getters, commit }, { type, slug, showLoading = false, lang = 'en' }) {
-            if ( ! getters.singlePageBySlug({ type, slug, lang }) ) {
-                if (showLoading) {
-                    commit('SET_LOADING', true)
-                }
-                return fetchSingle({ type, params: { slug } }).then(({ data: items }) => {
-                    let item = undefined;
-                    if (Array.isArray(items)) {
-                        items.forEach((post) => {
-                            if (post.metadata.page_lang === lang) {
-                                item = post;
-                                return false;
-                            }
-                        });
-                    } else {
-                        item = items;
-                    }
-
-                    commit('ADD_ITEM', { type, item  })
-                    if (showLoading) {
-                        commit('SET_LOADING', false)
-                    }
-                    return item
-                })
-            }
-        },
-        getSingleById({ getters, commit }, { type, id, showLoading = false, batch = false }) {
-            if ( ! getters.singleById({ type, id }) ) {
-                if ( showLoading ) {
-                    commit('SET_LOADING', true)
-                }
-                return fetchSingleById({ type, id, batch }).then(({ data }) => {
-                    if (batch) {
-                        data.forEach(item => commit('ADD_ITEM', { type, item }))
-                    } else {
-                        commit('ADD_ITEM', { type, item: data  })
-                    }
-                    if (showLoading) {
-                        commit('SET_LOADING', false)
-                    }
-                })
-            }
-        },
-        getItems({ getters, commit }, { type, params, showLoading = false }) {
-            if ( ! getters.request({ type, params }) ) {
-                if (showLoading) {
-                    commit('SET_LOADING', true)
-                }
-                return fetchItems({ type, params })
-                    .then(({ data: items, headers: { 'x-wp-total': total, 'x-wp-totalpages': totalPages } }) => {
-                        items.forEach(item => commit('ADD_ITEM', { type, item }))
-                        commit('ADD_REQUEST', { type, request: { params, total: parseInt(total), totalPages: parseInt(totalPages), data: items.map(i => i.id) } })
-                        if (showLoading) {
-                            commit('SET_LOADING', false)
-                        }
-                    })
-            }
-        },
-
-        getPosts({ getters, commit }, { type, params, showLoading = false }) {
-            if ( ! getters.request({ type: 'posts', params }) ) {
-                if (showLoading) {
-                    commit('SET_LOADING', true)
-                }
-                return fetchItems({ type, params })
-                    .then(({ data: items, headers: { 'x-wp-total': total, 'x-wp-totalpages': totalPages } }) => {
-                        items.forEach(item => commit('ADD_ITEM', { type: 'posts', item }))
-                        commit('ADD_REQUEST', { type: 'posts', request: { params, total: parseInt(total), totalPages: parseInt(totalPages), data: items.map(i => i.id) } })
-                        if (showLoading) {
-                            commit('SET_LOADING', false)
-                        }
-                    })
-            }
-        },
-
-
         updatePage({commit}, page) {
             commit('SET_PAGE', page);
         },

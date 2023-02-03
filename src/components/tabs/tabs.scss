@@ -30,6 +30,7 @@ $color-transparent-white: rgba(255, 255, 255, 0.05);
 
 .nav-tabs {
   display: flex;
+  list-style: none;
 }
 .nav-tabs-item {
   &_link {

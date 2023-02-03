@@ -25,7 +25,7 @@ const Template = (args) => ({
             title="LATEST WINNERS"
             className="nav-tabs-item_link"
           >
-            Tab2 text
+            Tab2 sdfafsadfasdfasdf
           </Tab>
       </Tabs>
 

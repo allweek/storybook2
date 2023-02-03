@@ -5,6 +5,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@alexnsk89/input": "^0.0.0"
+    "@alexnsk89/input": "^0.0.3"
   }
 }
