@@ -17,7 +17,7 @@ lerna publish
 ```       
 *для каждой сессии давать доступ командой в терминале "Set-ExecutionPolicy RemoteSigned -Scope Process"
 
-Более быстрый вариант публикации (потестить):
+Более быстрый вариант публикации (потестить - не публикует):
 ``` 
 lerna version patch --yes
 ```
